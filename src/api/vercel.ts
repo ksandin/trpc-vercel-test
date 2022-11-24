@@ -1,3 +1,3 @@
-import { createServer } from "./createServer";
+import { createApiServer } from "./createApiServer";
 
-export default createServer();
+export default createApiServer();

@@ -2,18 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-import { trpc } from "./trpc";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { httpBatchLink } from "@trpc/client";
-
-const queryClient = new QueryClient();
-const trpcClient = trpc.createClient({
-  links: [
-    httpBatchLink({
-      url: 'http://localhost:3000/trpc',
-    }),
-  ],
-});
+import { queryClient, trpc, trpcClient } from "./trpc";
+import { QueryClientProvider } from "@tanstack/react-query";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

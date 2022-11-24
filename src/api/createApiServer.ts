@@ -4,7 +4,7 @@ import { createExpressMiddleware } from '@trpc/server/adapters/express';
 import { createApiRouter } from "./createRouter";
 import { createContext } from "./trpc";
 
-export function createServer () {
+export function createApiServer () {
   const server = express();
   server.use(cors())
   server.use(
