@@ -6,6 +6,7 @@ import { createContext } from "./trpc";
 export function createApiServer () {
   const server = express();
   server.use(
+    "/api", // Has to be /api because of Vercel's Serverless Function entrypoint
     createExpressMiddleware({
       router: createApiRouter(),
       createContext,

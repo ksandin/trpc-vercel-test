@@ -9,7 +9,7 @@ dotEnvFlow.config({ default_node_env: "development" })
 const devServer = express();
 devServer.use(cors());
 devServer.use(morgan("dev"));
-devServer.use("/api", createApiServer()); // Plug into /api to mimic Vercel's behavior
+devServer.use(createApiServer());
 
 const port = process.env.VITE_API_PORT;
 devServer.listen(port, () => {
