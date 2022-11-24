@@ -16,5 +16,6 @@ export const trpcClient = trpc.createClient({
 });
 
 function getApiBaseUrl() {
-  return `//${window.location.hostname}:${import.meta.env.VITE_API_PORT}/api`;
+  const port = import.meta.env.VITE_API_PORT;
+  return `//${window.location.hostname}${port ? `:${port}` : ""}/api`;
 }
