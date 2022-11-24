@@ -2,9 +2,18 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
+import { createApiClients } from "./apiClients";
+import { trpc } from "./trpc";
+import { QueryClientProvider } from '@tanstack/react-query';
+
+const {trpcClient, queryClient} = createApiClients();
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <trpc.Provider client={trpcClient} queryClient={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <App/>
+      </QueryClientProvider>
+    </trpc.Provider>
   </React.StrictMode>
 )
