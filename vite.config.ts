@@ -4,7 +4,10 @@ import * as path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: path.resolve("src/app"),
+  root: path.resolve(__dirname, "src/app"),
+  build: {
+    outDir: path.resolve(__dirname, "dist"),
+  },
   plugins: [react()],
   envDir: __dirname,
 })
