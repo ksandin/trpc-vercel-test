@@ -1,6 +1,3 @@
 {
-  "functions": {
-    "src/api/vercel.ts": {}
-  },
   "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
 }
