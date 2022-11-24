@@ -7,7 +7,7 @@
     "dev": "concurrently \"yarn app:dev\" \"yarn api:dev\" --names \"app,api\"",
     "app:dev": "vite",
     "api:dev": "tsx watch src/api/dev",
-    "build": "tsc && vite build",
+    "build": "tsc --project src/app && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
