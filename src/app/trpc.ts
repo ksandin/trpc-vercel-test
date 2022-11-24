@@ -10,7 +10,11 @@ export const queryClient = new QueryClient();
 export const trpcClient = trpc.createClient({
   links: [
     httpBatchLink({
-      url: import.meta.env.VITE_API_BASE_URL + "/api/trpc",
+      url: getApiBaseUrl()
     }),
   ],
 });
+
+function getApiBaseUrl() {
+  return `//${window.location.hostname}:${import.meta.env.VITE_API_PORT}/api`;
+}
